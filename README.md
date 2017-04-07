@@ -10,4 +10,8 @@ If you're privisioning a new EC2 instance or similar, and you find yourself in a
 
     curl mehemken.io/vim > ~/.vimrc
 
-Bam! You've got yourself a sweet vimrc.
+Bam! You've got yourself a sweet vimrc. You might think, well, who is in charge of keeping it up to date?
+
+# Great question!
+
+I'm setting up a Jenkins server that watches this repo and automatically updates the file that's served at mehemken.io/vim. Hold on one second.
