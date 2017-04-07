@@ -1,0 +1,165 @@
+" Author:   Marco Hemken
+" email:    mehemken@gmail.com
+" github:   mehemken
+" web:      mehemken.io
+" Reload changes with this command:
+" :so %
+" :so is short for source
+" % stands for current file
+
+""""""""""""""""""""""""""""""""""""""""""
+" Vundle (uncomment if you need it)
+""""""""""""""""""""""""""""""""""""""""""
+" set the runtime path to include Vundle and initialize
+" set rtp+=~/.vim/bundle/Vundle.vim
+"
+" call vundle#begin()
+" " alternatively, pass a path where Vundle should install plugins
+" "call vundle#begin('~/some/path/here')
+" 
+" " let Vundle manage Vundle, required
+" Plugin 'VundleVim/Vundle.vim'
+" Plugin 'rust-lang/rust.vim'
+" Plugin 'racer-rust/vim-racer'
+" 
+" " other plugins:
+" 
+" " All of your Plugins must be added before the following line
+" call vundle#end()            " required
+"
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just
+" :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to
+" auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+""""""""""""""""""""""""""""""""""""""""""
+" Vundle (end)
+""""""""""""""""""""""""""""""""""""""""""
+
+set nocompatible              " be iMproved, required
+" To ignore plugin indent changes, instead use:
+filetype on                  " required
+filetype plugin on
+filetype plugin indent on    " required
+
+set laststatus=2
+set nu
+set rnu
+set hlsearch
+set nowrap
+
+augroup myvimrchooks
+	au!
+	autocmd bufwritepost .vimrc source ~/.vimrc
+augroup end
+
+"split navigations
+nnoremap <c-j> <c-w><c-j>
+nnoremap <c-k> <c-w><c-k>
+nnoremap <c-l> <c-w><c-l>
+nnoremap <c-h> <c-w><c-h>
+
+au bufnewfile,bufread *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
+    \ set rnu |
+
+au bufnewfile,bufread *.md
+    \ set autoindent |
+    \ set rnu |
+    \ set expandtab |
+    \ set shiftwidth=4 |
+    \ set softtabstop=4 |
+    \ set colorcolumn=80 |
+    \ hi colorcolumn ctermbg=darkgreen guibg=firebrick3 |
+
+au bufnewfile,bufread *.conf
+    \ set autoindent |
+    \ set rnu |
+    \ set expandtab |
+    \ set shiftwidth=4 |
+    \ set softtabstop=4 |
+    \ set colorcolumn=80 |
+
+au bufnewfile,bufread *.html
+    \ set shiftwidth=4 |
+    \ set rnu |
+
+au bufnewfile,bufread *.sh
+    \ set shiftwidth=4 |
+    \ set rnu |
+
+au bufnewfile,bufread *.rs 
+    \ set autoindent |
+    \ set shiftwidth=4 |
+    \ set rnu |
+
+au bufnewfile,bufread *.c  
+    \ set autoindent |
+    \ set shiftwidth=4 |
+    \ set rnu |
+
+au bufnewfile,bufread *.js  
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
+    \ set rnu |
+
+"au bufnewfile,bufread *.yml 
+autocmd filetype yaml 
+    \ set autoindent |
+    \ set rnu |
+    \ setlocal ts=2 sts=2 sw=2 expandtab
+
+"define badwhitespace before using in a match
+highlight badwhitespace ctermbg=red guibg=darkred
+
+au bufread,bufnewfile *.py,*.pyw,*.c,*.h match badwhitespace /\s\+$/
+
+set encoding=utf-8
+
+set splitbelow
+set splitright
+
+" remaps
+nnoremap ; :
+nnoremap : ;
+nnoremap 0 ^
+nnoremap ^ 0
+inoremap <tab> <esc>`^
+nnoremap co :noh<enter>
+
+" nice wrapping
+set wrap
+set linebreak
+set nolist " list diables linebreak
+
+"from a youtube video
+set path+=**    " search for files in subdirectories
+set wildmenu    " search for a file from substring
+let g:netrw_banner = 0    " edit: . to search current directory
+let g:netrw_liststyle = 3
+
+"snippets
+nnoremap \html :-1read ~/.vim/.skeleton.html<CR>2jfd
+nnoremap \Dockerfile :-1read ~/.vim/.skeleton.Dockerfile<CR>
+nnoremap \python :-1read ~/.vim/.skeleton.python<CR>3jfp
+nnoremap \flask :-1read ~/.vim/.skeleton.flask<CR>
+nnoremap \sanic :-1read ~/.vim/.skeleton.sanic<CR>
+nnoremap \bb :read ~/.vim/.skeleton.j2block<CR>
+nnoremap \log :-1read ~/.vim/.skeleton.logging<CR>
+nnoremap \argp :-1read ~/.vim/.skeleton.argparse<CR>
