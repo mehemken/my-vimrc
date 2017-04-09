@@ -7,6 +7,8 @@ pipeline {
         stage('build') {
             steps {
                 echo 'hello world'
+                pwd
+		ls
             }
         }
     }
