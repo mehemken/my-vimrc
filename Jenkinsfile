@@ -6,9 +6,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh echo 'hello world'
-                sh pwd
-		sh ls
+                sh 'echo "hello world"'
+                sh 'pwd'
+		sh 'ls'
             }
         }
     }
