@@ -53,6 +53,13 @@ set nu
 set rnu
 set hlsearch
 set nowrap
+set autoindent |
+set rnu |
+set expandtab |
+set shiftwidth=4 |
+set softtabstop=4 |
+set colorcolumn=80 |
+hi colorcolumn ctermbg=darkgreen guibg=firebrick3 |
 
 augroup myvimrchooks
 	au!
@@ -96,6 +103,10 @@ au bufnewfile,bufread *.html
     \ set shiftwidth=4 |
     \ set rnu |
 
+au bufnewfile,bufread *.go
+    \ set shiftwidth=4 |
+    \ set rnu |
+
 au bufnewfile,bufread *.sh
     \ set shiftwidth=4 |
     \ set rnu |
@@ -111,6 +122,15 @@ au bufnewfile,bufread *.c
     \ set rnu |
 
 au bufnewfile,bufread *.js  
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
+    \ set rnu |
+
+au bufnewfile,bufread *.json
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
