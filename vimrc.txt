@@ -53,13 +53,12 @@ set nu
 set rnu
 set hlsearch
 set nowrap
-set autoindent |
-set rnu |
-set expandtab |
-set shiftwidth=4 |
-set softtabstop=4 |
-set colorcolumn=80 |
-hi colorcolumn ctermbg=darkgreen guibg=firebrick3 |
+set shiftwidth=4
+set softtabstop=4
+" set autoindent |
+" set expandtab |
+" set colorcolumn=80 |
+" hi colorcolumn ctermbg=darkgreen guibg=firebrick3 |
 
 augroup myvimrchooks
 	au!
@@ -145,6 +144,14 @@ autocmd filetype yaml
     \ set rnu |
     \ setlocal ts=2 sts=2 sw=2 expandtab
 
+au BufRead,BufNewFile *.tf setlocal filetype=terraform
+au BufRead,BufNewFile *.tfvars setlocal filetype=terraform
+au BufRead,BufNewFile *.tfstate setlocal filetype=javascript
+autocmd filetype terraform
+    \ setlocal autoindent |
+    \ setlocal rnu |
+    \ setlocal ts=2 sts=2 sw=2 expandtab
+
 "define badwhitespace before using in a match
 highlight badwhitespace ctermbg=red guibg=darkred
 
@@ -183,3 +190,4 @@ nnoremap \sanic :-1read ~/.vim/.skeleton.sanic<CR>
 nnoremap \bb :read ~/.vim/.skeleton.j2block<CR>
 nnoremap \log :-1read ~/.vim/.skeleton.logging<CR>
 nnoremap \argp :-1read ~/.vim/.skeleton.argparse<CR>
+nnoremap \vpc :-1read ~/.vim/.skeleton.vpc<CR>
