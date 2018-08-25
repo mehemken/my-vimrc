@@ -183,12 +183,5 @@ let g:netrw_liststyle = 3
 
 "snippets
 nnoremap \html :-1read ~/.vim/.skeleton.html<CR>2jfd
-nnoremap \Dockerfile :-1read ~/.vim/.skeleton.Dockerfile<CR>
-nnoremap \python :-1read ~/.vim/.skeleton.python<CR>3jfp
-nnoremap \flask :-1read ~/.vim/.skeleton.flask<CR>
-nnoremap \sanic :-1read ~/.vim/.skeleton.sanic<CR>
-nnoremap \bb :read ~/.vim/.skeleton.j2block<CR>
-nnoremap \log :-1read ~/.vim/.skeleton.logging<CR>
-nnoremap \argp :-1read ~/.vim/.skeleton.argparse<CR>
-nnoremap \vpc :-1read ~/.vim/.skeleton.vpc<CR>
-nnoremap \ll :-1read ~/.vim/.skeleton.packages<CR>
+nnoremap \nil :-1read ~/.vim/.skeleton.nil<CR>Vjj>
+nnoremap \go :-1read ~/.vim/.skeleton.go<CR>
