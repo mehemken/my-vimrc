@@ -7,41 +7,6 @@
 " :so is short for source
 " % stands for current file
 
-""""""""""""""""""""""""""""""""""""""""""
-" Vundle (uncomment if you need it)
-""""""""""""""""""""""""""""""""""""""""""
-" set the runtime path to include Vundle and initialize
-" set rtp+=~/.vim/bundle/Vundle.vim
-"
-" call vundle#begin()
-" " alternatively, pass a path where Vundle should install plugins
-" "call vundle#begin('~/some/path/here')
-" 
-" " let Vundle manage Vundle, required
-" Plugin 'VundleVim/Vundle.vim'
-" Plugin 'rust-lang/rust.vim'
-" Plugin 'racer-rust/vim-racer'
-" 
-" " other plugins:
-" 
-" " All of your Plugins must be added before the following line
-" call vundle#end()            " required
-"
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just
-" :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to
-" auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-""""""""""""""""""""""""""""""""""""""""""
-" Vundle (end)
-""""""""""""""""""""""""""""""""""""""""""
-
 set nocompatible              " be iMproved, required
 " To ignore plugin indent changes, instead use:
 filetype on                  " required
@@ -55,10 +20,6 @@ set hlsearch
 set nowrap
 set shiftwidth=4
 set softtabstop=4
-" set autoindent |
-" set expandtab |
-" set colorcolumn=80 |
-" hi colorcolumn ctermbg=darkgreen guibg=firebrick3 |
 
 augroup myvimrchooks
 	au!
@@ -144,13 +105,9 @@ autocmd filetype yaml
     \ set rnu |
     \ setlocal ts=2 sts=2 sw=2 expandtab
 
+" Terraform
+au BufRead,BufNewFile *.tfvars setlocal filetype=go
 au BufRead,BufNewFile *.tf setlocal filetype=go
-" au BufRead,BufNewFile *.tfvars setlocal filetype=terraform
-" au BufRead,BufNewFile *.tfstate setlocal filetype=javascript
-" autocmd filetype terraform
-"     \ setlocal autoindent |
-"     \ setlocal rnu |
-"     \ setlocal ts=2 sts=2 sw=2 expandtab
 
 "define badwhitespace before using in a match
 highlight badwhitespace ctermbg=red guibg=darkred
@@ -172,7 +129,7 @@ nnoremap co :noh<enter>
 
 " nice wrapping
 set wrap
-set linebreak
+"set linebreak
 set nolist " list diables linebreak
 
 "from a youtube video
@@ -181,7 +138,11 @@ set wildmenu    " search for a file from substring
 let g:netrw_banner = 0    " edit: . to search current directory
 let g:netrw_liststyle = 3
 
-"snippets
-nnoremap \html :-1read ~/.vim/.skeleton.html<CR>2jfd
-nnoremap \nil :-1read ~/.vim/.skeleton.nil<CR>Vjj>
-nnoremap \go :-1read ~/.vim/.skeleton.go<CR>
+" Clear all registers
+function! ClearRegisters()
+    let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', '\zs')
+    for r in regs
+    call setreg(r, [])
+    endfor
+endfunction
+nnoremap cr :call ClearRegisters()<enter>
