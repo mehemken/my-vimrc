@@ -120,7 +120,7 @@ set splitbelow
 set splitright
 
 " Abbreviations
-iab { {<CR>}<Left><C-R>=Eatchar('\s')<CR><Up><Esc>O
+iab { {<CR>}<Up><Esc>o<BS><space><space>
 
 " remaps
 nnoremap ; :
