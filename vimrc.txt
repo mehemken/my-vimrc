@@ -119,13 +119,18 @@ set encoding=utf-8
 set splitbelow
 set splitright
 
+" Abbreviations
+iab { {<CR>}<Left><C-R>=Eatchar('\s')<CR><Up><Esc>O
+
 " remaps
 nnoremap ; :
 nnoremap : ;
 nnoremap 0 ^
 nnoremap ^ 0
+tnoremap <C-n> <C-w>N
 inoremap <tab> <esc>`^
 nnoremap co :noh<enter>
+nnoremap cej :res -8<enter>
 
 " nice wrapping
 set wrap
