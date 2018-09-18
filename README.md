@@ -1,4 +1,6 @@
-# I use vim (actually NeoVim)
+# I use vim
+
+(actually NeoVim as of September 2018)
 
 I've been using it for a while now. I prefer it over IDEs.
 
