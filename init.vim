@@ -40,7 +40,22 @@ nnoremap : ;
 nnoremap 0 ^
 nnoremap ^ 0
 inoremap <tab> <esc>`^
-tnoremap <C-o> <C-W>N
+
+" -- Terminal behavior --
+tnoremap <C-o> <C-\><C-N>
+au TermOpen * setlocal nonumber norelativenumber
+au TermOpen norm       |  " Highlights terminal cusor
+    \ hi! TermCursorNC |
+    \ ctermfg=15       |
+    \ guifg=#fdf6e3    |
+    \ ctermbg=14       |
+    \ guibg=#93a1a1    |
+    \ cterm=NONE       |
+    \ gui=NONE
+" <below> Allows pasting of registers with <A-r>
+tnoremap <expr> |
+    \ <A-r>     |
+    \ '<C-\><C-n>"'.nr2char(getchar()).'pi'
 
 "  -- Custom commands --
 nnoremap cor :call ClearRegisters()<enter>
