@@ -1,0 +1,17 @@
+Done
+* Switch capslock and control
+* firefox
+* firefox cookie settings
+* alacritty (download)
+* neovim (brew install)
+* homebrew
+* tmux (brew install)
+* lastpass
+* neovmrc (github)
+* junegunn/vim-plug (github)
+* exa (brew install) (zshrc)
+* Window movement ctrl+cmd
+* GitHub creds
+* tmux conf (github)
+
+To Do
