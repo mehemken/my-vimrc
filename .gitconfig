@@ -1,0 +1,19 @@
+[user]
+    name  = mehemken
+    email = mehemken@gmail.com
+[core]
+    editor       = nvim
+    excludesfile = /Users/emilio/.ggitignore
+[push]
+    default = simple
+[alias]
+    br   = branch
+    ch   = checkout
+    c    = commit
+    st   = status
+    logg = log --oneline --graph
+    p    = push
+[pager]
+    branch = false
+    stash  = false
+    tag    = false

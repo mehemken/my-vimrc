@@ -6,4 +6,4 @@ I've been using it for a while now. I prefer it over IDEs.
 
 # Plugins
 
-I believe vim itself has all the functionality I need out of the box. My vimrc does not have ANY plugins. Yeah.
+For a long time I used vim without any plugins. As of September 2021 I use 3. Two of them are syntax highlighs and the other one is NerdTREE.
