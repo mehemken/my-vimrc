@@ -1,8 +1,6 @@
 "  Author:       Marco Hemken
 "  email:        mehemken@gmail.com
 "  gitlab:       mehemken
-"  web:          mehemken.io
-"  Description:  Look ma'! No plugins!
 
 " =================================
 " Plug
@@ -34,8 +32,8 @@ call plug#end()
 " </> Plug
 " =================================
 
-" -- Netrw --
-"let g:netrw_winsize = 20 " Width of window (% of current window)
+" fzf
+let g:fzf_layout = { 'down': '40%' }
 
 " -- Tweaks --
 set autoindent
