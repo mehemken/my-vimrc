@@ -13,5 +13,7 @@ Done
 * Window movement ctrl+cmd
 * GitHub creds
 * tmux conf (github)
+* ripgrep
+* fzf
 
 To Do
