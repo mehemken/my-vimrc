@@ -120,20 +120,20 @@ bindkey '^R' fzf-history-widget
 # Custom Stuff
 #---------------------------------
 
-_git-br() {
+_gb() {
     git branch --color=always --sort=-committerdate \
         | grep -v HEAD \
         | fzf --ansi --height 50% \
-        --preview 'git log -n 5  \
-            --date=relative \
-            --color=always \
-            --pretty=medium \
-            $(sed "s/.* //" <<< {})' \
+              --preview 'git log -n 20  \
+              --date=relative \
+              --color=always \
+              --pretty="format:%C(auto)%cd %h%d %s" \
+              $(sed s/^..// <<< {} | cut -d" " -f1)' \
         | sed "s/.* //"
-}
+    }
 
 fzf-git-branch() {
-    LBUFFER="${LBUFFER}$(_git-br)"
+    LBUFFER="${LBUFFER}$(_gb)"
     local ret=$?
     zle reset-prompt
     return $ret
