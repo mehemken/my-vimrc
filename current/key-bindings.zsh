@@ -125,7 +125,7 @@ _gb() {
         | grep -v HEAD \
         | fzf --ansi --height 50% \
               --preview 'git log -n 20  \
-              --date=relative \
+              --date=short \
               --color=always \
               --pretty="format:%C(auto)%cd %h%d %s" \
               $(sed s/^..// <<< {} | cut -d" " -f1)' \
