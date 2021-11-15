@@ -1,3 +1,4 @@
+# location: ~/.vim/plugged/fzf/shell/key-bindings.zsh
 #     ____      ____
 #    / __/___  / __/
 #   / /_/_  / / /_
