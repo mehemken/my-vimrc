@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 # ------------------------------------------------------------------------------
+# location: ~/.oh-my-zsh/themes/nicoulaj2.zsh-theme
 # Prompt for the Zsh shell:
 #   * One line.
 #   * VCS info on the right prompt.
