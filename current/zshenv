@@ -1,0 +1,23 @@
+## Dot envs
+#$ZDOTDIR/.zshenv
+#$ZDOTDIR/.zshrc
+
+# PATH
+export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/go/bin"
+export PATH="/usr/local/bin:$PATH"
+
+export ARCHFLAGS='-arch arm64'
+export AWS_PAGER=
+export AWS_REGION=us-east-2
+export BAT_PAGER='less -R'
+export BAT_THEME=gruvbox-dark
+export FCEDIT=nvim
+export KIND_EXPERIMENTAL_PROVIDER=podman
+export TFENV_ARCH=arm64
+export XDG_CONFIG_HOME=$HOME/.config
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi

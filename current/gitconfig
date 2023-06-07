@@ -1,6 +1,8 @@
 [user]
     name  = mehemken
     email = mehemken@gmail.com
+[credential]
+    helper = cache --timeout 900
 [core]
     editor       = nvim
     excludesfile = /Users/emilio/.ggitignore
@@ -11,9 +13,9 @@
     ch   = checkout
     c    = commit
     st   = status
-    logg = log --oneline --graph
     p    = push
 [pager]
+    diff   = true
     branch = false
     stash  = false
     tag    = false
